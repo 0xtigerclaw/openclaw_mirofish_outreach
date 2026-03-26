@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.playwright-cli/
+*.log
+convex/_generated/
+.env.local
+.env.extension.local

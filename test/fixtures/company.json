@@ -1,0 +1,24 @@
+{
+  "data": {
+    "organizationDashCompaniesByUniversalName": {
+      "elements": [
+        {
+          "name": "OpenAI",
+          "universalName": "openai",
+          "websiteUrl": "https://openai.com",
+          "industry": [
+            {
+              "name": "Research Services"
+            }
+          ],
+          "employeeCountRange": {
+            "start": 1000,
+            "end": 5000
+          },
+          "description": "AI research and deployment company."
+        }
+      ]
+    }
+  }
+}
+

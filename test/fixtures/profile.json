@@ -1,0 +1,30 @@
+{
+  "data": {
+    "identityDashProfilesByMemberIdentity": {
+      "elements": [
+        {
+          "entityUrn": "urn:li:fsd_profile:111",
+          "publicIdentifier": "grace-hopper",
+          "firstName": "Grace",
+          "lastName": "Hopper",
+          "headline": {
+            "text": "Computer Scientist"
+          },
+          "location": {
+            "defaultLocalizedName": "New York, United States"
+          },
+          "profileTopPosition": {
+            "elements": [
+              {
+                "company": {
+                  "name": "Navy"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+

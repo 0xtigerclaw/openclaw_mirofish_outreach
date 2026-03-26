@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tigerclaw LinkedIn Inspector</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      body {
+        margin: 0;
+        min-width: 420px;
+        max-width: 420px;
+        background: #0b1020;
+        color: #e9edf7;
+      }
+
+      main {
+        display: grid;
+        gap: 12px;
+        padding: 14px;
+      }
+
+      h1,
+      h2 {
+        margin: 0;
+        font-weight: 700;
+      }
+
+      h1 {
+        font-size: 16px;
+      }
+
+      h2 {
+        font-size: 13px;
+      }
+
+      .card {
+        border: 1px solid rgba(148, 163, 184, 0.2);
+        border-radius: 12px;
+        background: rgba(15, 23, 42, 0.9);
+        padding: 12px;
+      }
+
+      .meta {
+        margin-top: 6px;
+        color: #9ba9c2;
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+      }
+
+      button,
+      select,
+      input {
+        font: inherit;
+      }
+
+      button {
+        border: 1px solid rgba(148, 163, 184, 0.3);
+        border-radius: 10px;
+        background: #111a35;
+        color: #f5f7ff;
+        padding: 8px 10px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #162247;
+      }
+
+      button.secondary {
+        background: transparent;
+      }
+
+      .status-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        border-radius: 999px;
+        background: #12203d;
+        padding: 5px 9px;
+        font-size: 12px;
+        color: #b8c5dc;
+      }
+
+      .preview-list {
+        margin: 10px 0 0;
+        padding-left: 18px;
+        color: #c9d4e9;
+        font-size: 12px;
+        max-height: 160px;
+        overflow: auto;
+      }
+
+      .inspector-controls {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .inspector-controls label {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: #c9d4e9;
+        font-size: 12px;
+      }
+
+      .field-grid {
+        display: grid;
+        gap: 8px;
+        margin-top: 10px;
+      }
+
+      .field-grid label {
+        display: grid;
+        gap: 4px;
+        color: #c9d4e9;
+        font-size: 12px;
+      }
+
+      select {
+        width: 100%;
+        border: 1px solid rgba(148, 163, 184, 0.3);
+        border-radius: 8px;
+        background: #10182f;
+        color: #f4f7ff;
+        padding: 6px 8px;
+      }
+
+      input[type="text"],
+      input[type="password"],
+      input[type="url"] {
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid rgba(148, 163, 184, 0.3);
+        border-radius: 8px;
+        background: #10182f;
+        color: #f4f7ff;
+        padding: 8px 10px;
+      }
+
+      pre {
+        margin: 10px 0 0;
+        max-height: 260px;
+        overflow: auto;
+        border-radius: 10px;
+        background: #07101f;
+        padding: 12px;
+        color: #bfe1ff;
+        font-size: 11px;
+        line-height: 1.45;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="card">
+        <h1>Tigerclaw LinkedIn Inspector</h1>
+        <div class="meta">Live auth, page scrape, and first-degree connection sync from the current Chrome profile.</div>
+      </section>
+
+      <section class="card">
+        <h2>Auth</h2>
+        <div class="meta">
+          <span id="auth-pill" class="status-pill">Idle</span>
+          <div id="auth-meta" class="meta"></div>
+        </div>
+        <div class="button-row">
+          <button id="connect-btn">Connect LinkedIn</button>
+          <button id="me-btn">Read My Profile</button>
+          <button id="clear-btn" class="secondary">Clear State</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Current Page</h2>
+        <div id="page-meta" class="meta">Open a LinkedIn profile, company, or post analytics page, then scrape it.</div>
+        <div class="button-row">
+          <button id="scrape-btn">Scrape Current Page</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>My Activity</h2>
+        <div id="activity-meta" class="meta">Scrape your own profile dashboard metrics and recent activity posts.</div>
+        <div class="button-row">
+          <button id="activity-btn">Scrape My Activity</button>
+          <button id="activity-analytics-btn">Sync Post Analytics</button>
+        </div>
+        <ol id="activity-preview" class="preview-list"></ol>
+      </section>
+
+      <section class="card">
+        <h2>Connections</h2>
+        <div id="connections-meta" class="meta">No sync has been run yet.</div>
+        <div class="button-row">
+          <button id="connections-btn">Sync 1st-Degree Connections</button>
+          <button id="export-json-btn">Export JSON</button>
+          <button id="export-csv-btn">Export CSV</button>
+        </div>
+        <ol id="connections-preview" class="preview-list"></ol>
+      </section>
+
+      <section class="card">
+        <h2>Followers</h2>
+        <div id="followers-meta" class="meta">No follower sync has been run yet.</div>
+        <div class="button-row">
+          <button id="followers-btn">Sync Followers</button>
+        </div>
+        <ol id="followers-preview" class="preview-list"></ol>
+      </section>
+
+      <section class="card">
+        <h2>Convex</h2>
+        <div id="convex-meta" class="meta">Not configured yet.</div>
+        <div class="field-grid">
+          <label>
+            Convex deployment URL
+            <input id="convex-url" type="url" placeholder="https://your-deployment.convex.cloud" />
+          </label>
+          <label>
+            Workspace key
+            <input id="convex-workspace" type="text" placeholder="tigerclaw-main" />
+          </label>
+          <label>
+            Sync token
+            <input id="convex-token" type="password" placeholder="shared secret for this workspace" />
+          </label>
+          <label>
+            Installation label
+            <input id="convex-label" type="text" placeholder="Local Chrome profile" />
+          </label>
+        </div>
+        <div class="button-row">
+          <button id="convex-save-btn">Save Convex Config</button>
+          <button id="convex-push-btn">Push Snapshot to Convex</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>JSON Inspector</h2>
+        <div class="inspector-controls">
+          <select id="dataset-select">
+            <option value="auth">Auth</option>
+            <option value="me">Me</option>
+            <option value="page">Current Page</option>
+            <option value="activity">My Activity</option>
+            <option value="connections">Connections</option>
+            <option value="followers">Followers</option>
+            <option value="convex">Convex</option>
+          </select>
+          <label>
+            <input id="raw-toggle" type="checkbox" />
+            Show raw
+          </label>
+        </div>
+        <pre id="json-output">{}</pre>
+      </section>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+  </html>

@@ -1,0 +1,51 @@
+{
+  "included": [
+    {
+      "$type": "com.linkedin.voyager.dash.relationships.Connection",
+      "connectedMember": "urn:li:fsd_profile:1",
+      "createdAt": 1735689600000
+    },
+    {
+      "$type": "com.linkedin.voyager.dash.relationships.Connection",
+      "connectedMember": "urn:li:fsd_profile:2",
+      "createdAt": 1735776000000
+    },
+    {
+      "entityUrn": "urn:li:fsd_profile:1",
+      "publicIdentifier": "jane-doe",
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "headline": {
+        "text": "Founder"
+      },
+      "profileTopPosition": {
+        "elements": [
+          {
+            "company": {
+              "name": "Acme"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "entityUrn": "urn:li:fsd_profile:2",
+      "publicIdentifier": "john-smith",
+      "firstName": "John",
+      "lastName": "Smith",
+      "headline": {
+        "text": "Investor"
+      },
+      "profileTopPosition": {
+        "elements": [
+          {
+            "company": {
+              "name": "Capital"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+

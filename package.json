@@ -1,0 +1,20 @@
+{
+  "name": "tigerclaw-linkedin-extension",
+  "version": "0.2.14",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "tsx --test test/**/*.test.ts",
+    "check": "npm run build && npm run test",
+    "convex:dev": "convex dev",
+    "convex:deploy": "convex deploy"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.1.29",
+    "@types/node": "^24.5.2",
+    "convex": "^1.27.0",
+    "esbuild": "^0.25.9",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.2"
+  }
+}

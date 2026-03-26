@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Tigerclaw LinkedIn Inspector",
+  "version": "0.2.14",
+  "description": "Inspect your live LinkedIn session, scrape current profile, company, and post analytics pages, sync connections and followers, and bulk-sync your post analytics.",
+  "permissions": ["cookies", "storage", "tabs", "scripting", "activeTab", "unlimitedStorage"],
+  "host_permissions": [
+    "https://www.linkedin.com/*",
+    "https://*.convex.cloud/*",
+    "http://localhost/*",
+    "http://127.0.0.1/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Tigerclaw LinkedIn Inspector",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "included": [
+    {
+      "$type": "com.linkedin.voyager.dash.relationships.Connection",
+      "connectedMember": "urn:li:fsd_profile:2",
+      "createdAt": 1735776000000
+    },
+    {
+      "$type": "com.linkedin.voyager.dash.relationships.Connection",
+      "connectedMember": "urn:li:fsd_profile:3",
+      "createdAt": 1735862400000
+    },
+    {
+      "entityUrn": "urn:li:fsd_profile:2",
+      "publicIdentifier": "john-smith",
+      "firstName": "John",
+      "lastName": "Smith",
+      "headline": {
+        "text": "Investor"
+      },
+      "profileTopPosition": {
+        "elements": [
+          {
+            "company": {
+              "name": "Capital"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "entityUrn": "urn:li:fsd_profile:3",
+      "publicIdentifier": "mary-jones",
+      "firstName": "Mary",
+      "lastName": "Jones",
+      "headline": {
+        "text": "Operator"
+      },
+      "profileTopPosition": {
+        "elements": [
+          {
+            "company": {
+              "name": "Studio"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+
