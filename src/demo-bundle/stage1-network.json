@@ -1,0 +1,85 @@
+{
+  "id": "network",
+  "title": "Stage 1: LinkedIn Connections",
+  "subtitle": "This graph comes from the fresh six-connection MiroFish run and starts with several credible warm routes already present in the founder's LinkedIn connections.",
+  "summary": "",
+  "callouts": [
+    "Harrison and Justin form the direct investor layer. Katia, Sally, Matt, and Anastasiia form the softer operator and platform bridge layer."
+  ],
+  "narrative": {
+    "panelMode": "overview",
+    "scoreLabel": "6 saved routes",
+    "confidenceLabel": "Breadth scan",
+    "connectorLabel": "Current field",
+    "connector": {
+      "name": "Multiple first-degree routes",
+      "title": "Investor, operator, and platform connectors",
+      "company": "Shortlist still open"
+    },
+    "destinationLabel": "Potential investor destinations",
+    "likelyInvestorDestination": {
+      "name": "Hack VC, Decasonic, and platform-led paths",
+      "description": "The system is still mapping which route is warmest and safest."
+    },
+    "warmPathSummary": "Tigerclaw begins by proving there is already a real investor surface across two layers: the founder's first-degree network and the second-degree surface revealed through the top five strongest connections.",
+    "whyThisPerson": "Harrison and Justin anchor the direct investor layer, while Katia, Sally, Matt, and Anastasiia represent softer operator and ecosystem bridges whose own first-degree networks create the second-degree expansion layer.",
+    "whyNow": "This snapshot matters before any reasoning because it proves the founder does not need net-new prospecting to start. The first-degree network already contains the entry points, and the top five connections unlock the adjacent second-degree surface.",
+    "whyThisRankedAboveOthers": "At this point nothing is final. The shortlist is being preserved so MiroFish can pressure-test both direct venture routes and connector-first bridges without prematurely hiding viable options.",
+    "suggestedAsk": "Do not send yet. Move into the reasoning stages and tighten the path before drafting any outreach.",
+    "supportingProof": [
+      "Harrison at Hack VC and Justin at Decasonic already form real investor-facing first-degree routes.",
+      "Katia, Sally, Matt, and Anastasiia create softer operator and platform bridges whose own networks extend the second-degree surface.",
+      "The graph already contains enough first-degree and second-degree warm structure to start with strategy instead of cold prospecting."
+    ],
+    "likelyObjection": "If the founder chooses too early, the product will look like keyword ranking instead of strategic path selection.",
+    "nextBestStep": "Narrow the graph into one primary investor route and one softer bridge route.",
+    "draftLabel": "No active draft",
+    "draftMessage": "No single outreach draft is active in shortlist mode. Advance to Stage 2 or Stage 3 to see the ask tighten around one specific path.",
+    "executionRows": [
+      {
+        "label": "Stage mode",
+        "value": "Shortlist view only. This stage is about route coverage, not execution."
+      },
+      {
+        "label": "Draft posture",
+        "value": "No message should be sent until one route is narrowed and explained."
+      }
+    ],
+    "actions": {
+      "canApprove": false,
+      "canPreparePayload": false
+    }
+  },
+  "nodes": [
+    { "id": "swayam", "label": "Swayam Shah", "type": "founder", "subtitle": "Founder / Tigerclaw", "x": 510, "y": 300 },
+    { "id": "harrison", "label": "Harrison Dahme", "type": "investor", "subtitle": "Direct venture path", "x": 230, "y": 120 },
+    { "id": "justin", "label": "Justin Patel", "type": "investor", "subtitle": "Investor bridge", "x": 835, "y": 145 },
+    { "id": "matt", "label": "Matt Garrow-Fisher", "type": "connector", "subtitle": "Partnership operator", "x": 165, "y": 430 },
+    { "id": "anastasiia", "label": "Anastasiia Moshkovska-Lorentzen", "type": "connector", "subtitle": "Ecosystem connector", "x": 385, "y": 560 },
+    { "id": "katia", "label": "Katia Yakovleva", "type": "connector", "subtitle": "Friend-first bridge", "x": 675, "y": 525 },
+    { "id": "sally", "label": "Sally Ann Frank", "type": "connector", "subtitle": "Startup platform route", "x": 915, "y": 420 },
+    { "id": "hackvc", "label": "Hack VC", "type": "organization", "subtitle": "Fund destination", "x": 80, "y": 60 },
+    { "id": "decasonic", "label": "Decasonic", "type": "organization", "subtitle": "AI + Web3 investor context", "x": 1070, "y": 105 },
+    { "id": "horizen", "label": "Horizen Labs", "type": "organization", "subtitle": "Cryptography ecosystem", "x": 40, "y": 500 },
+    { "id": "peanut", "label": "Peanut.Trade", "type": "organization", "subtitle": "Web3 venture bridge", "x": 305, "y": 700 },
+    { "id": "frontier", "label": "FrontierTower.io", "type": "organization", "subtitle": "Community and event layer", "x": 730, "y": 700 },
+    { "id": "microsoft", "label": "Microsoft for Startups", "type": "organization", "subtitle": "Startup platform support", "x": 1100, "y": 470 }
+  ],
+  "edges": [
+    { "id": "s-harrison", "source": "swayam", "target": "harrison", "label": "1st-degree", "type": "knows" },
+    { "id": "s-justin", "source": "swayam", "target": "justin", "label": "1st-degree", "type": "knows" },
+    { "id": "s-matt", "source": "swayam", "target": "matt", "label": "1st-degree", "type": "knows" },
+    { "id": "s-anastasiia", "source": "swayam", "target": "anastasiia", "label": "1st-degree", "type": "knows" },
+    { "id": "s-katia", "source": "swayam", "target": "katia", "label": "1st-degree", "type": "knows" },
+    { "id": "s-sally", "source": "swayam", "target": "sally", "label": "1st-degree", "type": "knows" },
+    { "id": "harrison-hackvc", "source": "harrison", "target": "hackvc", "label": "works at", "type": "affiliated_with" },
+    { "id": "justin-decasonic", "source": "justin", "target": "decasonic", "label": "works at", "type": "affiliated_with" },
+    { "id": "matt-horizen", "source": "matt", "target": "horizen", "label": "works at", "type": "affiliated_with" },
+    { "id": "anastasiia-peanut", "source": "anastasiia", "target": "peanut", "label": "works at", "type": "affiliated_with" },
+    { "id": "katia-frontier", "source": "katia", "target": "frontier", "label": "works at", "type": "affiliated_with" },
+    { "id": "sally-microsoft", "source": "sally", "target": "microsoft", "label": "works at", "type": "affiliated_with" },
+    { "id": "harrison-justin", "source": "harrison", "target": "justin", "label": "knows investor peer", "type": "knows" },
+    { "id": "katia-justin", "source": "katia", "target": "justin", "label": "knows", "type": "knows" },
+    { "id": "anastasiia-matt", "source": "anastasiia", "target": "matt", "label": "ecosystem overlap", "type": "knows" }
+  ]
+}

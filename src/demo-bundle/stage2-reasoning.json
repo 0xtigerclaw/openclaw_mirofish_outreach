@@ -1,0 +1,78 @@
+{
+  "id": "reasoning",
+  "title": "Stage 2: MiroFish reasoning",
+  "subtitle": "The broad graph tightens once MiroFish layers in real relationship memory, venture fit, and the lowest-friction ask.",
+  "summary": "Tigerclaw ranks the broad network first. MiroFish then narrows it into a path replay that answers the founder question directly: who should I message first, what proof shifts trust, what risk makes the ask feel too early, and what exact next step keeps the relationship warm rather than transactional.",
+  "callouts": [
+    "The primary path is now direct and venture-adjacent: Harrison at Hack VC becomes the best person to ask because the route is already warm and the ask can stay narrow.",
+    "The reasoning uses more than LinkedIn profile text. It adds manual founder memory like recent conversations and shared AI-agent context that LinkedIn does not capture cleanly.",
+    "The next stage shows the softer friend-first route through Katia into Justin at Decasonic, proving the system can choose connectors before capital allocators."
+  ],
+  "narrative": {
+    "panelMode": "path",
+    "scoreLabel": "Base score 96",
+    "confidenceLabel": "High-confidence route",
+    "connectorLabel": "Best person to ask",
+    "connector": {
+      "personKey": "hdahme",
+      "name": "Harrison Dahme",
+      "title": "CTO @ Hack VC | Engineering & Ventures | Agent Framework & Blockchain Lab Co-Founder",
+      "company": "Hack VC"
+    },
+    "destinationLabel": "Likely investor destination",
+    "likelyInvestorDestination": {
+      "name": "Hack VC venture path",
+      "description": "A warm AI, infrastructure, and crypto-adjacent investor route that stays specific instead of broad."
+    },
+    "warmPathSummary": "Tigerclaw identified Harrison as the strongest current investor-facing route because the relationship is already warm, the venture context is direct, and the first ask can be framed as a focused calibration conversation instead of an immediate fundraising request.",
+    "whyThisPerson": "Harrison is compelling because the path is already venture-adjacent and the relationship carries real founder memory: recent AI-agent and infrastructure discussion, shared operator language, and enough trust to reopen the thread naturally.",
+    "whyNow": "The timing works because the founder can follow up with a short Hack VC fit memo and a traction snapshot while the conversation context is still recent, which makes the next step feel like a continuation rather than a cold ask.",
+    "whyThisRankedAboveOthers": "It ranked above softer bridge candidates because the route ends closer to actual capital allocation, yet still preserves warmth. It ranked above a direct Justin-first route because Harrison allows a narrower, lower-friction re-entry into the venture conversation.",
+    "suggestedAsk": "Message Harrison with a short context refresh, attach a concise Hack VC fit memo plus a Tigerclaw traction snapshot, and ask for a brief calibration call before requesting any broader investor path.",
+    "supportingProof": [
+      "Recent venture conversation around AI agents, infrastructure, and crypto-adjacent product strategy.",
+      "A short Tigerclaw traction snapshot and investor-fit memo tailored to Hack VC.",
+      "Shared operator context that makes the message feel like a continuation of an existing conversation instead of a generic founder pitch."
+    ],
+    "likelyObjection": "If the outreach jumps too fast to a broad fundraise intro, the warmth of the relationship can collapse into a transactional ask.",
+    "nextBestStep": "Send a context-first reply, keep the ask to a short calibration conversation, and only widen it into investor routing after the fit is confirmed.",
+    "draftLabel": "Context-first draft",
+    "draftMessage": "Hey Harrison, great chatting recently about AI-agent infrastructure and crypto-adjacent product strategy. I am building Tigerclaw, which helps founders turn their existing network into the warmest investor path, and I think there is a specific overlap with the kind of founder and infrastructure context Hack VC sees. I put together a very short note on why I think the fit is real, plus a concise traction snapshot. Would you be open to a quick calibration call, and if it resonates, point me toward the right next investor path rather than me guessing from the outside?",
+    "executionRows": [
+      {
+        "label": "Route mode",
+        "value": "Primary direct venture route via Harrison into Hack VC."
+      },
+      {
+        "label": "Draft posture",
+        "value": "Keep the first message calibration-led, specific, and context-first."
+      }
+    ],
+    "actions": {
+      "canApprove": true,
+      "canPreparePayload": true
+    }
+  },
+  "nodes": [
+    { "id": "swayam", "label": "Swayam Shah", "type": "founder", "subtitle": "Founder / Tigerclaw", "x": 100, "y": 240 },
+    { "id": "harrison", "label": "Harrison Dahme", "type": "connector", "subtitle": "Best person to ask", "x": 405, "y": 145 },
+    { "id": "hackvc", "label": "Hack VC", "type": "organization", "subtitle": "Likely investor destination", "x": 790, "y": 135 },
+    { "id": "recent-chat", "label": "Recent venture chat", "type": "proof", "subtitle": "Manual relationship memory", "x": 165, "y": 55 },
+    { "id": "shared-context", "label": "Shared AI-agent context", "type": "proof", "subtitle": "Why the reply feels earned", "x": 420, "y": 38 },
+    { "id": "traction", "label": "Tigerclaw traction", "type": "proof", "subtitle": "Current proof to send", "x": 710, "y": 345 },
+    { "id": "fit-memo", "label": "Hack VC fit memo", "type": "proof", "subtitle": "Specific founder thesis", "x": 670, "y": 55 },
+    { "id": "risk-ask", "label": "Avoid a broad ask", "type": "risk", "subtitle": "Likely objection", "x": 175, "y": 410 },
+    { "id": "next-step", "label": "Memo + calibration call", "type": "execution_state", "subtitle": "Lowest-friction next step", "x": 490, "y": 395 }
+  ],
+  "edges": [
+    { "id": "reason-s-harrison", "source": "swayam", "target": "harrison", "label": "warm path", "type": "knows" },
+    { "id": "reason-harrison-hackvc", "source": "harrison", "target": "hackvc", "label": "works at", "type": "can_intro" },
+    { "id": "reason-chat", "source": "recent-chat", "target": "harrison", "label": "supports trust", "type": "supports" },
+    { "id": "reason-context", "source": "shared-context", "target": "harrison", "label": "supports familiarity", "type": "supports" },
+    { "id": "reason-fit", "source": "fit-memo", "target": "harrison", "label": "supports fit", "type": "supports" },
+    { "id": "reason-traction", "source": "traction", "target": "harrison", "label": "supports credibility", "type": "supports" },
+    { "id": "reason-risk", "source": "risk-ask", "target": "harrison", "label": "blocks broad ask", "type": "blocks" },
+    { "id": "reason-next", "source": "harrison", "target": "next-step", "label": "requires context-first outreach", "type": "requires" },
+    { "id": "reason-next-hackvc", "source": "next-step", "target": "hackvc", "label": "de-risks investor path", "type": "supports" }
+  ]
+}

@@ -88,14 +88,15 @@ export function normalizeConvexDeploymentUrl(value: string): string {
   return stripTrailingSlash(parsed.toString());
 }
 
-async function callConvexMutation<T>(
+async function callConvexEndpoint<T>(
   deploymentUrl: string,
+  endpointPath: "mutation" | "query",
   path: string,
   args: Record<string, unknown>
 ): Promise<T> {
   const normalizedUrl = normalizeConvexDeploymentUrl(deploymentUrl);
-  const endpoint = `${normalizedUrl}/api/mutation`;
-  logger.log("Calling Convex mutation.", { endpoint, path });
+  const endpoint = `${normalizedUrl}/api/${endpointPath}`;
+  logger.log(`Calling Convex ${endpointPath}.`, { endpoint, path });
 
   const response = await fetch(endpoint, {
     method: "POST",
@@ -112,7 +113,7 @@ async function callConvexMutation<T>(
   const responseBody = (await response.json()) as ConvexHttpResponse<T>;
 
   if (!response.ok || responseBody.status !== "success" || typeof responseBody.value === "undefined") {
-    logger.error("Convex mutation failed.", {
+    logger.error(`Convex ${endpointPath} failed.`, {
       endpoint,
       path,
       status: response.status,
@@ -123,6 +124,22 @@ async function callConvexMutation<T>(
   }
 
   return responseBody.value;
+}
+
+export async function callConvexMutation<T>(
+  deploymentUrl: string,
+  path: string,
+  args: Record<string, unknown>
+): Promise<T> {
+  return callConvexEndpoint(deploymentUrl, "mutation", path, args);
+}
+
+export async function callConvexQuery<T>(
+  deploymentUrl: string,
+  path: string,
+  args: Record<string, unknown>
+): Promise<T> {
+  return callConvexEndpoint(deploymentUrl, "query", path, args);
 }
 
 function chunkConnections(connections: ConnectionRecord[]): ConnectionRecord[][] {

@@ -17,6 +17,10 @@
     "default_title": "Tigerclaw LinkedIn Inspector",
     "default_popup": "popup.html"
   },
+  "options_ui": {
+    "page": "demo.html",
+    "open_in_tab": true
+  },
   "content_scripts": [
     {
       "matches": ["https://www.linkedin.com/*"],

@@ -706,6 +706,55 @@ export const getWorkspacePosts = query({
   }
 });
 
+export const getWorkspaceConnections = query({
+  args: {
+    workspaceKey: v.string(),
+    syncToken: v.string()
+  },
+  handler: async (ctx, args) => {
+    await requireInstallation(ctx, args.workspaceKey, args.syncToken);
+    const runs = await ctx.db
+      .query("linkedinSyncRuns")
+      .withIndex("by_workspaceKey", (queryBuilder: any) => queryBuilder.eq("workspaceKey", args.workspaceKey))
+      .collect();
+
+    const sortedRuns = runs.sort((left: any, right: any) => {
+      const leftTime = left.completedAt ?? left.updatedAt ?? left.startedAt ?? 0;
+      const rightTime = right.completedAt ?? right.updatedAt ?? right.startedAt ?? 0;
+      return rightTime - leftTime;
+    });
+
+    const selectedRun =
+      sortedRuns.find((run: any) => run.status === "success" && run.connectionCount > 0) ??
+      sortedRuns.find((run: any) => run.connectionCount > 0) ??
+      sortedRuns[0] ??
+      null;
+
+    if (!selectedRun) {
+      return {
+        run: null,
+        connections: []
+      };
+    }
+
+    const batches = await ctx.db
+      .query("linkedinConnectionBatches")
+      .withIndex("by_workspaceKey_runKey", (queryBuilder: any) =>
+        queryBuilder.eq("workspaceKey", args.workspaceKey).eq("runKey", selectedRun.runKey)
+      )
+      .collect();
+
+    const connections = batches
+      .sort((left: any, right: any) => left.batchIndex - right.batchIndex)
+      .flatMap((batch: any) => (Array.isArray(batch.records) ? batch.records : []));
+
+    return {
+      run: selectedRun,
+      connections
+    };
+  }
+});
+
 export const getWorkspaceFollowers = query({
   args: {
     workspaceKey: v.string(),

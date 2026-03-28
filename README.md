@@ -9,11 +9,23 @@ Standalone Chrome extension testbed for:
 - JSON/CSV export from the popup
 - Convex-backed snapshot upload for remote storage
 
+Standalone founder-facing app surface for:
+
+- ranked warm investor-intro paths
+- graph replay of saved network, reasoning, and execution
+- draft + approval state before Mission Control handoff
+
 ## Setup
 
 ```bash
 npm install
 npm run build
+```
+
+Open the standalone app UI from:
+
+```text
+dist/app.html
 ```
 
 Load the unpacked extension from:

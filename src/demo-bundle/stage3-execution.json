@@ -1,0 +1,72 @@
+{
+  "id": "execution",
+  "title": "Stage 4: Execution",
+  "subtitle": "The selected warm path is translated into a draft, approval state, and Mission Control handoff.",
+  "summary": "Execution should keep the chosen investor route visible instead of hiding the context behind a generic send button. The founder can still see who the message is for, why this is the right warm path, and where Mission Control takes over.",
+  "callouts": [
+    "The founder stays in control with a visible approval gate before anything moves toward LinkedIn execution.",
+    "Mission Control is the execution bridge, not the ranking engine or the strategist.",
+    "For the hackathon build, this stage stops at a real payload handoff instead of auto-send."
+  ],
+  "narrative": {
+    "panelMode": "execution",
+    "scoreLabel": "Execution-ready",
+    "confidenceLabel": "Chosen route",
+    "connectorLabel": "Selected connector",
+    "connector": {
+      "personKey": "hdahme",
+      "name": "Harrison Dahme",
+      "title": "CTO @ Hack VC | Engineering & Ventures | Agent Framework & Blockchain Lab Co-Founder",
+      "company": "Hack VC"
+    },
+    "destinationLabel": "Execution destination",
+    "likelyInvestorDestination": {
+      "name": "Hack VC venture path",
+      "description": "The final presentation route Tigerclaw is carrying into Mission Control."
+    },
+    "warmPathSummary": "Execution keeps the selected Harrison -> Hack VC path visible so the founder never loses sight of why this message exists and what it is trying to unlock.",
+    "whyThisPerson": "The system commits to Harrison here because the direct route is still the strongest mix of venture proximity, warmth, and credibility for this presentation flow.",
+    "whyNow": "By the time this stage is reached, the founder already has the right memo, traction snapshot, and relationship context assembled, so the path is ready for a controlled handoff.",
+    "whyThisRankedAboveOthers": "This becomes the final demo route because it is both the most legible investor story and the easiest one to explain live: warm relationship, direct venture relevance, narrow ask, clear next step.",
+    "suggestedAsk": "Approve the context-first Harrison draft and hand it to Mission Control as the downstream execution payload.",
+    "supportingProof": [
+      "Recent conversation context is already captured.",
+      "The Hack VC fit memo and Tigerclaw traction snapshot are ready to attach.",
+      "The approval gate keeps the founder in control before any downstream action."
+    ],
+    "likelyObjection": "The only remaining risk is sending before the founder is comfortable with the framing, which is why the approval gate stays visible here.",
+    "nextBestStep": "Approve the draft, create the Mission Control payload, and keep the live send as a downstream manual step.",
+    "draftLabel": "Final execution draft",
+    "draftMessage": "Hey Harrison, great chatting recently about AI-agent infrastructure and crypto-adjacent product strategy. I am building Tigerclaw, which helps founders turn their existing network into the warmest investor path, and I think there is a specific overlap with the kind of founder and infrastructure context Hack VC sees. I put together a very short note on why I think the fit is real, plus a concise traction snapshot. Would you be open to a quick calibration call, and if it resonates, point me toward the right next investor path rather than me guessing from the outside?",
+    "executionRows": [
+      {
+        "label": "Route mode",
+        "value": "Final chosen route for the founder-facing demo."
+      },
+      {
+        "label": "Draft posture",
+        "value": "This message is ready to move through approval into a Mission Control payload."
+      }
+    ],
+    "actions": {
+      "canApprove": true,
+      "canPreparePayload": true
+    }
+  },
+  "nodes": [
+    { "id": "swayam", "label": "Swayam Shah", "type": "founder", "subtitle": "Founder / Tigerclaw", "x": 150, "y": 235 },
+    { "id": "harrison", "label": "Harrison Dahme", "type": "investor", "subtitle": "Selected warm target", "x": 420, "y": 135 },
+    { "id": "hackvc", "label": "Hack VC path", "type": "organization", "subtitle": "Investor destination", "x": 780, "y": 135 },
+    { "id": "draft", "label": "Draft ready", "type": "execution_state", "subtitle": "Founder-facing message prepared", "x": 405, "y": 350 },
+    { "id": "approval", "label": "Awaiting approval", "type": "execution_state", "subtitle": "Manual gate", "x": 635, "y": 350 },
+    { "id": "mc", "label": "Mission Control payload", "type": "execution_state", "subtitle": "Ready for downstream execution", "x": 885, "y": 350 }
+  ],
+  "edges": [
+    { "id": "exec-warm", "source": "swayam", "target": "harrison", "label": "selected warm path", "type": "knows" },
+    { "id": "exec-hackvc", "source": "harrison", "target": "hackvc", "label": "venture route", "type": "can_intro" },
+    { "id": "exec-draft", "source": "swayam", "target": "draft", "label": "drafted", "type": "drafted" },
+    { "id": "exec-approval", "source": "draft", "target": "approval", "label": "requires approval", "type": "requires" },
+    { "id": "exec-mc", "source": "approval", "target": "mc", "label": "approved handoff", "type": "approved" },
+    { "id": "exec-send", "source": "mc", "target": "harrison", "label": "LinkedIn send", "type": "sent" }
+  ]
+}

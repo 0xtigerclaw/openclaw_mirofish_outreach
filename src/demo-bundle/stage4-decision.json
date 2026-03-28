@@ -1,0 +1,73 @@
+{
+  "id": "decision",
+  "title": "Stage 4: Founder Decision",
+  "subtitle": "The founder compares the direct investor route with the friend-first bridge route before Mission Control takes over.",
+  "summary": "This stage makes the tradeoff explicit: move directly into the investor-facing route, or choose the softer friend-first bridge path when preserving warmth matters more than speed.",
+  "callouts": [
+    "The direct path is faster and closer to capital allocation.",
+    "The friend-first path is softer and protects the relationship when a direct ask feels too early."
+  ],
+  "narrative": {
+    "panelMode": "path",
+    "scoreLabel": "Founder choice",
+    "confidenceLabel": "Decision gate",
+    "connectorLabel": "Decision owner",
+    "connector": {
+      "name": "Founder approval",
+      "title": "Human selection before execution",
+      "company": "Tigerclaw"
+    },
+    "destinationLabel": "Compared routes",
+    "likelyInvestorDestination": {
+      "name": "Direct vs friend-first",
+      "description": "Two warm path options are visible before Mission Control receives a payload."
+    },
+    "warmPathSummary": "Tigerclaw has already narrowed the graph into two credible routes. The founder now decides whether to take the direct investor path or the softer friend-first bridge path.",
+    "whyThisPerson": "This decision stays with the founder because the tradeoff is not only about graph structure. It is also about timing, comfort, and how aggressive the first move should feel.",
+    "whyNow": "The system already has enough context to compare both routes clearly, so the remaining question is strategic preference rather than missing information.",
+    "whyThisRankedAboveOthers": "Only the direct Harrison route and the friend-first Katia route remain because they are the strongest combinations of warmth, plausibility, and response probability.",
+    "suggestedAsk": "Choose the route that best matches the founder's appetite for directness, then hand the selected memo into Mission Control.",
+    "supportingProof": [
+      "The direct route stays closer to investor decision-makers.",
+      "The friend-first route preserves warmth and lowers social risk.",
+      "Both routes are already grounded in the same saved graph and MiroFish reasoning run."
+    ],
+    "likelyObjection": "Choosing too quickly can optimize for speed over warmth, or for comfort over decisiveness.",
+    "nextBestStep": "Select one route and continue to Mission Control with that memo.",
+    "draftLabel": "Decision checkpoint",
+    "draftMessage": "Choose the route first. Mission Control should only receive the final memo after the founder commits to direct or friend-first.",
+    "executionRows": [
+      {
+        "label": "Stage mode",
+        "value": "Compare and choose between the two remaining warm paths."
+      },
+      {
+        "label": "Execution posture",
+        "value": "Mission Control remains downstream of the founder decision."
+      }
+    ],
+    "actions": {
+      "canApprove": false,
+      "canPreparePayload": false
+    }
+  },
+  "nodes": [
+    { "id": "decision-founder", "label": "Founder", "type": "founder", "subtitle": "Final route decision", "x": 200, "y": 245 },
+    { "id": "decision-direct", "label": "Direct path", "type": "execution_state", "subtitle": "Faster investor route", "x": 420, "y": 135 },
+    { "id": "decision-harrison", "label": "Harrison Dahme", "type": "connector", "subtitle": "Direct venture route", "x": 655, "y": 110 },
+    { "id": "decision-hackvc", "label": "Hack VC", "type": "organization", "subtitle": "Investor destination", "x": 910, "y": 110 },
+    { "id": "decision-bridge", "label": "Friend-first path", "type": "execution_state", "subtitle": "Lower-friction bridge route", "x": 420, "y": 365 },
+    { "id": "decision-katia", "label": "Katia Yakovleva", "type": "connector", "subtitle": "Trusted bridge", "x": 650, "y": 330 },
+    { "id": "decision-justin", "label": "Justin Patel", "type": "investor", "subtitle": "Investor bridge", "x": 860, "y": 330 },
+    { "id": "decision-decasonic", "label": "Decasonic", "type": "organization", "subtitle": "Investor destination", "x": 1080, "y": 330 }
+  ],
+  "edges": [
+    { "id": "decision-direct-edge", "source": "decision-founder", "target": "decision-direct", "label": "choose direct", "type": "requires" },
+    { "id": "decision-direct-harrison", "source": "decision-direct", "target": "decision-harrison", "label": "message first", "type": "knows" },
+    { "id": "decision-harrison-hackvc", "source": "decision-harrison", "target": "decision-hackvc", "label": "venture route", "type": "can_intro" },
+    { "id": "decision-bridge-edge", "source": "decision-founder", "target": "decision-bridge", "label": "choose friend-first", "type": "requires" },
+    { "id": "decision-bridge-katia", "source": "decision-bridge", "target": "decision-katia", "label": "message first", "type": "knows" },
+    { "id": "decision-katia-justin", "source": "decision-katia", "target": "decision-justin", "label": "bridge", "type": "knows" },
+    { "id": "decision-justin-decasonic", "source": "decision-justin", "target": "decision-decasonic", "label": "investor route", "type": "can_intro" }
+  ]
+}

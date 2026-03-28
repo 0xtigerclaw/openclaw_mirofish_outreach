@@ -6,15 +6,22 @@
     "build": "node scripts/build.mjs",
     "test": "tsx --test test/**/*.test.ts",
     "check": "npm run build && npm run test",
+    "pilot:mirofish": "tsx src/cli/mirofishPilot.ts",
     "convex:dev": "convex dev",
     "convex:deploy": "convex deploy"
   },
   "devDependencies": {
     "@types/chrome": "^0.1.29",
+    "@types/d3": "^7.4.3",
     "@types/node": "^24.5.2",
     "convex": "^1.27.0",
     "esbuild": "^0.25.9",
     "tsx": "^4.21.0",
     "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "d3": "^7.9.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
   }
 }

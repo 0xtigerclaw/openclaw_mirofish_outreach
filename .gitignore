@@ -5,3 +5,8 @@ dist/
 convex/_generated/
 .env.local
 .env.extension.local
+pilot-runs/
+pilot-runs-*/
+.mirofish-cache/
+output/
+.claude/

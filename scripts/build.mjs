@@ -62,7 +62,9 @@ await esbuild.build({
   entryPoints: {
     background: path.join(rootDir, "src/background.ts"),
     content: path.join(rootDir, "src/content.ts"),
-    popup: path.join(rootDir, "src/popup.ts")
+    popup: path.join(rootDir, "src/popup.ts"),
+    demo: path.join(rootDir, "src/demo.ts"),
+    app: path.join(rootDir, "src/app.tsx")
   },
   outdir: distDir,
   bundle: true,
@@ -75,5 +77,7 @@ await esbuild.build({
 
 await copyFile(path.join(rootDir, "manifest.json"), path.join(distDir, "manifest.json"));
 await copyFile(path.join(rootDir, "src/popup.html"), path.join(distDir, "popup.html"));
+await copyFile(path.join(rootDir, "src/demo.html"), path.join(distDir, "demo.html"));
+await copyFile(path.join(rootDir, "src/app.html"), path.join(distDir, "app.html"));
 
 console.log(`Built extension to ${distDir}`);

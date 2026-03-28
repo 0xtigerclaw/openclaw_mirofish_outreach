@@ -1,0 +1,74 @@
+{
+  "id": "friend-first",
+  "title": "Stage 3: Friend-first bridge path",
+  "subtitle": "After the primary venture route, Tigerclaw can still show a softer connector-first path when the warmer ask is strategically safer.",
+  "summary": "This stage is the alternative path replay. Instead of going straight to a venture contact, the founder starts with a trusted connector, uses shared context and platform familiarity to earn the next move, and only then steps into an investor conversation.",
+  "callouts": [
+    "This route is softer, but it is still strategic. The point is not to maximize prestige, it is to maximize warmth and response probability.",
+    "Katia matters because FrontierTower already sits near Tigerclaw's story and because she can plausibly open the path into Justin at Decasonic.",
+    "The ask changes here: do not ask for an investor intro first. Ask for a steer into the right conversation."
+  ],
+  "narrative": {
+    "panelMode": "path",
+    "scoreLabel": "Bridge route",
+    "confidenceLabel": "Lower-friction ask",
+    "connectorLabel": "Friend-first connector",
+    "connector": {
+      "personKey": "katia-yakovleva",
+      "name": "Katia Yakovleva",
+      "title": "Founder / community operator",
+      "company": "FrontierTower.io"
+    },
+    "destinationLabel": "Likely investor destination",
+    "likelyInvestorDestination": {
+      "name": "Justin Patel -> Decasonic",
+      "description": "A softer AI + Web3 investor path reached through trust and founder context instead of a direct fundraise ask."
+    },
+    "warmPathSummary": "This route is intentionally softer. Instead of reopening the investor conversation directly, Tigerclaw uses Katia as the trusted bridge into Justin and only then steps into Decasonic's investor context.",
+    "whyThisPerson": "Katia is the right connector here because the relationship carries genuine founder overlap and FrontierTower already sits close to Tigerclaw's story. That makes the first message feel like a request for perspective, not a hidden ask for capital.",
+    "whyNow": "The friend-first route matters right now because it gives the founder a lower-friction re-entry into the network when a direct investor ask would feel too abrupt. It keeps momentum without spending social trust too early.",
+    "whyThisRankedAboveOthers": "It ranks below Harrison on directness, but above the rest of the bridge layer on warmth and response probability. Katia is closer to the founder's lived context and has a more credible handoff into Justin than the other operator routes.",
+    "suggestedAsk": "Ask Katia for a steer into the right Decasonic conversation rather than requesting an investor intro directly. Keep it specific and founder-to-founder.",
+    "supportingProof": [
+      "FrontierTower already has context on Tigerclaw, so the bridge is not starting from zero.",
+      "Shared founder and community context makes the ask feel earned rather than opportunistic.",
+      "Justin at Decasonic becomes reachable through a human bridge instead of a cold investor ask."
+    ],
+    "likelyObjection": "If the message feels like a disguised investor ask, Katia may protect the relationship by avoiding the handoff.",
+    "nextBestStep": "Message Katia first, ask for a quick steer, and only escalate into Justin once the fit and angle are clear.",
+    "draftLabel": "Bridge-path draft",
+    "draftMessage": "Hey Katia, I have been thinking about how Tigerclaw fits into the AI and Web3 founder conversations you already sit close to. Rather than forcing a direct investor ask from the outside, I wanted to start with you because I think you would have the best read on whether there is a real Decasonic angle here. If I send a short context note and traction snapshot, would you be open to steering me toward the right conversation, even if the answer is just how to frame it better first?",
+    "executionRows": [
+      {
+        "label": "Route mode",
+        "value": "Friend-first bridge through Katia into Justin and Decasonic."
+      },
+      {
+        "label": "Draft posture",
+        "value": "Lead with trust and calibration, not with a direct intro request."
+      }
+    ],
+    "actions": {
+      "canApprove": true,
+      "canPreparePayload": true
+    }
+  },
+  "nodes": [
+    { "id": "bridge-founder", "label": "Swayam Shah", "type": "founder", "subtitle": "Founder / Tigerclaw", "x": 90, "y": 200 },
+    { "id": "bridge-frontier-proof", "label": "FrontierTower signal", "type": "proof", "subtitle": "Platform already sees Tigerclaw", "x": 205, "y": 82 },
+    { "id": "bridge-katia", "label": "Katia Yakovleva", "type": "connector", "subtitle": "Trusted community bridge", "x": 365, "y": 150 },
+    { "id": "bridge-shared", "label": "Shared founder context", "type": "proof", "subtitle": "Why the ask feels natural", "x": 365, "y": 320 },
+    { "id": "bridge-justin", "label": "Justin Patel", "type": "investor", "subtitle": "Investor bridge", "x": 625, "y": 165 },
+    { "id": "bridge-decasonic", "label": "Decasonic", "type": "organization", "subtitle": "AI + Web3 investor destination", "x": 845, "y": 115 },
+    { "id": "bridge-next", "label": "Ask Katia for a steer", "type": "execution_state", "subtitle": "Lower-friction than a direct investor ask", "x": 595, "y": 360 }
+  ],
+  "edges": [
+    { "id": "bridge-founder-katia", "source": "bridge-founder", "target": "bridge-katia", "label": "warm relationship", "type": "knows" },
+    { "id": "bridge-frontier-katia", "source": "bridge-frontier-proof", "target": "bridge-katia", "label": "supports credibility", "type": "supports" },
+    { "id": "bridge-shared-katia", "source": "bridge-shared", "target": "bridge-katia", "label": "supports trust", "type": "supports" },
+    { "id": "bridge-katia-justin", "source": "bridge-katia", "target": "bridge-justin", "label": "knows", "type": "knows" },
+    { "id": "bridge-justin-decasonic", "source": "bridge-justin", "target": "bridge-decasonic", "label": "works at", "type": "can_intro" },
+    { "id": "bridge-katia-next", "source": "bridge-katia", "target": "bridge-next", "label": "requires soft ask", "type": "requires" },
+    { "id": "bridge-next-justin", "source": "bridge-next", "target": "bridge-justin", "label": "de-risks investor reachout", "type": "supports" }
+  ]
+}
