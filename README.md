@@ -10,6 +10,10 @@ The Chrome extension in this repo is only the ingest sidecar. The product surfac
 
 ![Tigerclaw Hackathon Flow](./docs/assets/tigerclaw-hackathon-flow-v4.png)
 
+## Video Walkthrough
+
+[Watch the Tigerclaw walkthrough video (Tigerclaw.mov)](https://drive.google.com/file/d/1vt2GFYpb5KMCsoDfvRYgLAbClHCE2C6p/view?usp=sharing)
+
 ### What is happening
 
 1. `API / CSV / Scraping` ingests LinkedIn data.
