@@ -1,4 +1,4 @@
-# Tigerclaw LinkedIn Extension MVP
+# Tigerclaw: Intelligent Outreach At Scale
 
 Standalone Chrome extension testbed for:
 
