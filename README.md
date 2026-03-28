@@ -79,11 +79,17 @@ For the hackathon flow, the intended mode is:
 
 Mission Control is the execution layer.
 
-Tigerclaw hands the selected route into Mission Control, where the downstream agents build the outreach package. The current integration uses the LinkedIn workflow:
+Tigerclaw hands the founder-selected route into Mission Control, where the downstream agents turn that route into the actual outreach package. Mission Control is where the selected path becomes a working campaign, moves through review, and waits for founder approval before the final LinkedIn send.
+
+The current integration uses the LinkedIn workflow:
 
 ```text
 Curie -> Ogilvy -> Carnegie -> Ive
 ```
+
+#### Mission Control Dashboard
+
+![Mission Control Dashboard](./docs/assets/mission-control-dashboard.png)
 
 ## Local Setup
 
