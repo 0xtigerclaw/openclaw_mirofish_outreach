@@ -12,7 +12,7 @@ The Chrome extension in this repo is only the ingest sidecar. The product surfac
 
 ## Video Walkthrough
 
-[Watch the Tigerclaw walkthrough video (Tigerclaw.mov)](https://drive.google.com/file/d/1vt2GFYpb5KMCsoDfvRYgLAbClHCE2C6p/view?usp=sharing)
+[Watch the Tigerclaw walkthrough video (Tigerclaw.mov)](https://drive.google.com/file/d/1ktfNkFjIxij-7zMZrLn2Vj571G3Yg25t/view?usp=sharing)
 
 ### What is happening
 
