@@ -1,10 +1,21 @@
 # Tigerclaw
 
-Tigerclaw is a founder-facing outreach strategist for warm investor introductions.
+Tigerclaw is a founder-facing GTM decision and outreach system.
 
-It takes a founder's LinkedIn network, ranks the strongest routes, runs MiroFish as a side simulation engine to pressure-test those routes, and then hands the founder-selected path into Mission Control so downstream agents can build the final outreach campaign.
+This demo is currently framed around warm investor introductions, but the underlying system is designed to be adapted to any specific GTM use case: investor outreach, partner intros, customer prospecting, hiring outreach, media relationships, ecosystem expansion, or other warm-network motions.
+
+It takes a founder's network, ranks the strongest routes, runs MiroFish as a side simulation engine to pressure-test those routes, and then hands the user-selected path into Mission Control so downstream agents can build the final outreach campaign.
 
 The Chrome extension in this repo is only the ingest sidecar. The product surface is the standalone Tigerclaw app.
+
+## Why this matters
+
+Tigerclaw is not tied to one outbound workflow. The same architecture can be reused anywhere GTM depends on choosing the right path, pressure-testing the ask, and operationalizing the next move.
+
+- rank the best routes for a specific GTM objective
+- simulate and compare those routes before acting
+- let the operator choose the final path
+- hand the selected path into downstream agents for execution
 
 ## System Flow
 
